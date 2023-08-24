@@ -1,0 +1,15 @@
+extends layout 
+
+block content 
+    h1= title 
+    .flex-column 
+        p= pepper.description 
+
+        h2 What sauces use this pepper?
+        if sauces.length > 0
+            ul 
+                each sauce in sauces 
+                    li 
+                        a(href=`/catalog/sauces/${sauce.url}`) #{sauce.name}
+        else 
+            p Hmm, no sauces contain this pepper yet!

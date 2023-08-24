@@ -1,0 +1,9 @@
+extends layout 
+
+block content 
+    h1= title 
+    .flex-column
+        .flex-row 
+            strong Scoville Rating 
+            p #{sauce.scoville}
+        p= sauce.description

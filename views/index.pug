@@ -2,4 +2,33 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  div.sauce-table
+    form(action="" method="GET" )
+      label(for="sauce-sort") Sort by:
+      select(id="sauce-sort" name="sort")
+        if sort == 'heat'
+          option(value="name") Name
+          option(value="heat" selected) Scoville Rating
+        else
+          option(value="name" selected) Name
+          option(value="heat") Scoville Rating 
+      button.btn Submit
+
+    if sauces
+      table 
+        tr 
+          th Sauce 
+          th Description 
+          th Scoville Rating
+        each sauce in sauces 
+          tr 
+            td 
+              a(href=`sauces/${sauce.url}`)  #{sauce.name}
+            td 
+              p= sauce.description
+            td #{sauce.scoville}
+    else 
+      p 
+        There are no sauces yet.
+
+    a.btn(href="/catalog/sauces/add") Add Sauce

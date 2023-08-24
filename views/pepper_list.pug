@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+    h1= title
+
+    div.flex-column
+        ul 
+            each pepper in peppers 
+                li 
+                    a(href=`/catalog/peppers/${pepper.url}`) #{pepper.name} 
+            else 
+                li There are no peppers
+        
+        a.btn(href="peppers/add") Add Pepper 
