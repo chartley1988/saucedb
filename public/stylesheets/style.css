@@ -238,6 +238,10 @@ footer {
 	transition-duration: 0.5s;
 }
 
+.caution {
+	background-color: var(--darkOrange900);
+}
+
 .flex-column {
 	width: max-content;
 	display: flex;

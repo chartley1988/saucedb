@@ -20,7 +20,7 @@ const SauceSchema = new Schema({
 });
 
 SauceSchema.virtual('url').get(function () {
-	return `${this._id}`;
+	return `/catalog/sauces/${this._id}`;
 });
 
 module.exports = mongoose.model('Sauce', SauceSchema);

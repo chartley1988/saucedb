@@ -23,7 +23,7 @@ block content
         each sauce in sauces 
           tr 
             td 
-              a(href=`sauces/${sauce.url}`)  #{sauce.name}
+              a(href=sauce.url)  #{sauce.name}
             td 
               p= sauce.description
             td #{sauce.scoville}

@@ -7,8 +7,22 @@ block content
     form.flex-column(action="" method="POST")
         div
             label(for="pepper-name") Name of Pepper 
-            input#pepper-name(type="text" minlength=1 maxlength=200 required placehold="Pepper Name" name="name") 
+            input#pepper-name(
+                type="text" 
+                minlength=1 
+                maxlength=200 
+                required 
+                placeholder="Pepper Name" 
+                name="name"
+                value=(pepper === undefined ? '' : pepper.name)
+                ) 
         
-        textarea#pepper-description(name="description", cols="30", rows="10" placeholder="Enter a description of the pepper." required minlength=1 maxlength=600)
+        textarea#pepper-description(name="description" 
+        cols="30", 
+        rows="10" 
+        placeholder="Enter a description of the pepper." 
+        required 
+        minlength=1 
+        maxlength=600) #{pepper === undefined ? '' : pepper.description}
 
         button.btn(type="submit") Submit Pepper

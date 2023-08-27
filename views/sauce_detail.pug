@@ -7,3 +7,13 @@ block content
             strong Scoville Rating 
             p #{sauce.scoville}
         p= sauce.description
+        h2 What peppers are in this sauce?
+        ul 
+        each pepper in peppers 
+            li 
+                a(href=pepper.url) #{pepper.name}
+
+        else 
+            p Apparently there are no peppers in this sauce!
+        a.btn(href=`${sauce.url}/update`) Update Sauce
+        a.btn.caution(href=`${sauce.url}/delete`) Delete Sauce

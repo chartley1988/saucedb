@@ -7,8 +7,8 @@ block content
         ul 
             each pepper in peppers 
                 li 
-                    a(href=`/catalog/peppers/${pepper.url}`) #{pepper.name} 
+                    a(href=pepper.url) #{pepper.name} 
             else 
                 li There are no peppers
         
-        a.btn(href="peppers/add") Add Pepper 
+        a.btn(href="add") Add Pepper 

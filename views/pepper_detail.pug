@@ -10,6 +10,8 @@ block content
             ul 
                 each sauce in sauces 
                     li 
-                        a(href=`/catalog/sauces/${sauce.url}`) #{sauce.name}
+                        a(href=sauce.url) #{sauce.name}
         else 
             p Hmm, no sauces contain this pepper yet!
+        a.btn(href=`${pepper.id}/update`) Update Pepper 
+        a.btn.caution(href=`${pepper.id}/delete`) Delete Pepper 

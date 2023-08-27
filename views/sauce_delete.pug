@@ -1,0 +1,10 @@
+extends layout 
+
+block content 
+    h1 Delete Sauce: 
+    h2 #{sauce.name}
+
+    p Are you sure you want to delete this sauce?
+    form(action="" method="POST")
+        input#sauceid(type="hidden" required value=sauce._id name='sauceid')
+        button.btn.caution(type="submit") Delete Sauce

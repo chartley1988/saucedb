@@ -5,24 +5,48 @@ block content
   div.sauce-table
     form.flex-column(action="" method="POST" )
       label(for="sauce-name") Name of Sauce
-      input#sauce-name(type="text" name="name" required value=(sauce === undefined? '' : sauce.name))
+      input#sauce-name(
+        type="text" 
+        name="name" 
+        required 
+        value=(sauce === undefined? '' : sauce.name)
+        )
 
       label(for="sauce-description" placeholder="Sauce Name") Sauce Description
-      textarea#sauce-description(type="text" name="description" placeholder="Sauce Description" required value=(sauce === undefined ? '' : sauce.description))
+      textarea#sauce-description(
+        type="text"
+        name="description"
+        placeholder="Sauce Description" 
+        required
+        ) #{sauce === undefined ? '' : sauce.description}
+        //- In the case of textareas, the value cannot be set like other inputs
 
       label(for="heat-rating") Scoville Rating 
-      input#heat-rating(type="number" name="heat_rating" placeholder=0 min=0 max=1000000 value=(sauce === undefined ? 0 : sauce.scoville))
+      input#heat-rating(
+        type="number" 
+        name="heat_rating" 
+        placeholder=0 
+        min=0 
+        max=1000000 
+        value=(sauce === undefined ? 0 : sauce.scoville)
+        )
 
       .checkbox-grid 
         each pepper in peppers
           div.flex-row
             label(for=pepper._id) #{pepper.name}
-            input(type="checkbox" name="peppers" value=pepper._id id=pepper._id checked=peppers.checked)
+            input(
+              type="checkbox" 
+              name="peppers" 
+              value=pepper._id 
+              id=pepper._id 
+              checked=pepper.checked
+              )
 
 
       button(type="submit") Submit
 
       if errors
         ul
-            for error in errors
-                li!= error.msg
+          for error in errors
+            li!= error.msg

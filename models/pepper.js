@@ -8,7 +8,7 @@ const PepperSchema = new Schema({
 })
 
 PepperSchema.virtual('url').get(function(){
-    return `${this._id}`;
+    return `/catalog/peppers/${this._id}`;
 })
 
 module.exports = mongoose.model('Pepper', PepperSchema);

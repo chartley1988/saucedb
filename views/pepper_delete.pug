@@ -1,0 +1,25 @@
+extends layout 
+
+block content
+    h1 Delete Pepper: 
+    h2 #{pepper.name}
+
+    div.flex-column
+
+        if sauces.length > 0
+            p You cannot delete this pepper until the following sauces are removed: 
+            ul 
+                each sauce in sauces 
+                    li 
+                        a(href=sauce.url) #{sauce.name} 
+        else 
+            div.flex-column
+                p Are you sure you'd like to delete this pepper?
+                form(action="" method="POST") 
+                    input#pepperid(
+                        type="hidden"
+                        name="pepperid"
+                        value=pepper._id
+                        required
+                        )
+                    button.caution.btn Yup, I'm sure!
