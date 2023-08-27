@@ -27,6 +27,10 @@ exports.pepper_detail = asyncHandler(async (req, res, next) => {
 		return next(error);
 	}
 
+	saucesWithPepper.forEach(sauce => {
+		sauce.name = validator.unescape(sauce.name);
+	})
+
 	res.render('pepper_detail', {
 		title: pepper.name,
 		pepper: pepper,
