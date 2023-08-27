@@ -28,6 +28,7 @@ exports.sauce_list = asyncHandler(async (req, res, next) => {
 	sauces.forEach((sauce) => {
 		// Cleans up escaped text to readable symbols
 		sauce.description = validator.unescape(sauce.description);
+		sauce.name = validator.unescape(sauce.name);
 	});
 
 	res.render('index', {
@@ -46,6 +47,7 @@ exports.sauce_detail = asyncHandler(async (req, res, next) => {
 
 	// Cleans up escaped text to readable symbols
 	sauce.description = validator.unescape(sauce.description);
+	sauce.name = validator.unescape(sauce.name);
 
 	if (sauce === null) {
 		const err = new Error('Sauce not found!');
