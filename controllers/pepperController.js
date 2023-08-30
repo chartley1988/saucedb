@@ -116,6 +116,10 @@ exports.pepper_delete_get = asyncHandler(async (req,res,next) => {
 		Sauce.find({ pepper: req.params.id }, 'name url').exec(),
 	]);
 
+	sauces.forEach(sauce => {
+		sauce.name = validator.unescape(sauce.name);
+	})
+
 	if (pepper === null) {
 		const error = new Error("Pepper does not exist!");
 		error.status = 404;
