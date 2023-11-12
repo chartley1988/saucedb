@@ -1,0 +1,32 @@
+extends layout 
+
+block content 
+
+    h1 Log In 
+
+    form(action="/users/sign-in" method="POST")
+        div.flex-column
+            label(for="username") User Name 
+            input#username(
+                type="text" 
+                name="username" 
+                placeholder="User Name"
+                minLength=8
+                maxLength=30
+                required
+                ) 
+
+            label(for="password") Password 
+            input#password(
+                type="password" 
+                name="password" 
+                minLength=8 
+                maxLength=30
+                pattern=('^[a-zA-Z0-9]+$')
+                required
+                )
+            button.btn Log in 
+
+            p Not a user yet? 
+             a(href="/users/sign-up")  Sign up! 
+

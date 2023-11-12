@@ -1,0 +1,32 @@
+extends layout 
+
+block content 
+
+    h1 Sign Up 
+
+    form(action="" method="POST")
+        div.flex-column
+            label(for="username") User Name 
+            input#username(
+                type="text" 
+                name="username" 
+                placeholder="User Name"
+                minLength=8
+                maxLength=30
+                required
+                ) 
+
+            label(for="password") Password 
+            input#password(
+                type="password" 
+                name="password" 
+                minLength=8 
+                maxLength=30
+                pattern=('^[a-zA-Z0-9]+$')
+                required
+                )
+            p(style="max-width: 26ch;") Passwords can contain any letters or numbers, but NOT special characters.
+
+
+            button.btn Sign Up
+

@@ -7,15 +7,9 @@ html
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet")
+    script(async, defer, src="/javascripts/userMenu.js")
   body
-    header
-      img(src='/images/SauceDB_Logo.svg' alt="Logo")
-      img(src='/images/title_text.png' alt="Title Text SauceDB").title
-      menu
-        li 
-          a(href="/") Sauces 
-        li 
-          a(href="/catalog/peppers") Peppers
+    include header.pug
     main
       block content
     footer © Copyright 2023 Chartley

@@ -1,0 +1,21 @@
+header
+      img(src='/images/SauceDB_Logo.svg' alt="Logo")
+      img(src='/images/title_text.png' alt="Title Text SauceDB").title
+      menu
+        li 
+          a(href="/") Sauces 
+        li 
+          a(href="/catalog/peppers") Peppers
+        if user 
+          li 
+            button#menu-button.btn #{user.name}
+                ul#menu.menu-closed 
+                    li 
+                        a.menu-link(href="")  My Sauces 
+                    li 
+                        a.menu-link(href="")  Profile 
+                    li 
+                        a.menu-link(href="/users/log-out")  Logout 
+        else 
+            li 
+                a(href="/users/sign-in") Sign In

@@ -30,11 +30,11 @@ exports.sauce_list = asyncHandler(async (req, res, next) => {
 		sauce.description = validator.unescape(sauce.description);
 		sauce.name = validator.unescape(sauce.name);
 	});
-
 	res.render('index', {
 		title: 'Sauces',
 		sauces: sauces,
 		sort: sort,
+		user: req.user,
 	});
 });
 
